@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "localhost に対して Chrome を起動",
       "url": "http://localhost:4200",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
