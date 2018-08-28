@@ -4,6 +4,8 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { HEROES } from '../mock-heroes';
 import { Observable, of } from 'rxjs';
+import { MessageService } from '../message.service';
+
 
 @Component({
   selector: 'app-heroes',
@@ -18,11 +20,15 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
-  constructor(private heroService: HeroService) { }
+  constructor(private messageService: MessageService) { }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+  // getHeroes(): void {
+  //   this.heroService.getHeroes()
+  //     .subscribe(heroes => this.heroes = heroes);
+  // }
+  getHeroes(): Observable<Hero[]> {
+    this.messageService.add('HeroService: fetched heroes')
+    return of(HEROES);
   }
 
   ngOnInit() {
