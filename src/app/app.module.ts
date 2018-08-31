@@ -9,6 +9,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
