@@ -22,6 +22,7 @@ export class HeroService {
     // return this.http.get<Hero[]>(this.heroesUrl);
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
+        tap(heroes => this.log('fetched heroes')),
         catchError(this.handleError('getHeroes', []))
       );
   }
@@ -40,6 +41,6 @@ export class HeroService {
       console.error(error);
       this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
-    }
+    };
   }
 }
